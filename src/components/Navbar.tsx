@@ -1,7 +1,10 @@
-import React from "react";
 import { Link } from "react-router";
 
-const Navbar = ({ drawerId }) => {
+type NavbarProps = {
+  drawerId?: string;
+};
+
+const Navbar = ({ drawerId }: NavbarProps) => {
   return (
     <div className="navbar sticky top-0 z-30 w-full bg-base-100 shadow-sm">
       {drawerId && (
@@ -24,9 +27,10 @@ const Navbar = ({ drawerId }) => {
         </div>
       )}
       <div className="flex-1">
-        <Link to="/dashboard/test-create" className="btn btn-ghost text-xl">
-          PrepRoute
-        </Link>
+        <Link
+          to="/dashboard/test-create"
+          className="btn btn-ghost text-xl"
+        ></Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
